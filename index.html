@@ -1,48 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./src/output.css">
-</head>
-<body>
-    <div>
-        <div class="container-lg max-w-screen-lg mx-auto">
-            <div class="border my-40">
-                <div class="grid lg:grid-cols-12">
-                    <div class="lg:col-span-6 p-12">
-                        <div>
-                            <img src="images/logo-2.png" class="w-14 h-14" alt="">
-                        </div>
-                        <div class="flex flex-col">
-                            <h1 class="font-bold text-2xl">Sign in to your account</h1>
-                            <p class="text-sm text-gray-400 font-normal">Not a member? <span class="text-blue-700 font-bold text-sm">Start a 14 day free trial</span></p>
-                        </div>
-                        <div class="">
-                            <form class="mt-10">
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div class="col-span-2 flex flex-col gap-1">
-                                        <label for="" class="font-semibold text-sm text-gray-color">Email*</label>
-                                        <input type="email" class="border rounded-lg p-1">
-                                    </div>
-                                    <div class="col-span-2 flex flex-col gap-1">
-                                        <label for="" class="font-semibold text-sm text-gray-color">Phone number</label>
-                                        <input type="tel" class="border rounded-lg p-1">
-                                    </div>
-                                </div>
-                                <div class="mt-8">
-                                    <button class="w-full bg-bg-button text-white text-center rounded-full p-3 font-semibold text-sm">Get my free trial</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-6 h-auto bg-green-300">
-                        <img src="images/login-img.jfif" alt="" class="h-full object-cover">
-                    </div>
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body>
+    <div class="grid lg:grid-cols-10">
+      <div class="lg:col-span-4 flex flex-row justify-center">
+        <div class="flex flex-col justify-center w-4/5 px-12">
+          <div>
+            <img src="images/logo3.png" class="w-14 h-14" alt="" />
+          </div>
+          <div class="mb-8">
+            <h1 class="font-bold text-2xl">Sign in to your account</h1>
+          <p class="text-sm text-gray-400 font-normal">
+            Not a member?
+            <span class="text-purple-shade font-bold text-sm"
+              >Start a 14 day free trial</span
+            >
+          </p>
+          </div>
+          <div class="">
+            <!--contact form-->
+            <form class="">
+              <div class="grid grid-cols-1 gap-4">
+                <div class="flex flex-col gap-1">
+                  <label for="" class="font-semibold text-sm text-gray-color"
+                    >Email</label
+                  >
+                  <input type="email" class="border rounded-lg p-1" />
                 </div>
-            </div>
+                <div class="flex flex-col gap-1">
+                  <label for="" class="font-semibold text-sm text-gray-color"
+                    >Phone number</label
+                  >
+                  <input type="tel" class="border rounded-lg p-1" />
+                </div>
+                <div class="flex justify-between gap-10">
+                  <div>
+                    <input type="checkbox" />
+                    <label for="">Remember me</label>
+                  </div>
+                  <div>
+                    <button class="text-purple-shade font-semibold">Forgot password?</button>
+                  </div>
+                </div>
+                <!--sign in button-->
+                <div>
+                  <button
+                    class="bg-purple-shade w-full rounded-lg p-2 text-center font-bold text-white"
+                  >
+                    Sign in
+                  </button>
+                </div>
+              </div>
+              <!--Or continue with-->
+              <div>
+                
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
+      <div class="lg:col-span-6">
+        <img src="images/login-img.jfif" alt="" class="h-screen object-cover" />
+      </div>
     </div>
-</body>
+  </body>
 </html>
