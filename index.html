@@ -5,52 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./src/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   </head>
-  <body>
-    <div class="grid lg:grid-cols-10">
-      <div class="lg:col-span-4 flex flex-row justify-center">
-        <div class="flex flex-col justify-center w-4/5 px-12">
+  <body class="font-inter">
+    <div class="grid lg:grid-cols-10 gap-5">
+      <div class="lg:col-span-4 flex flex-row justify-center md:p-5">
+        <div class="flex flex-col justify-center">
           <div>
-            <img src="images/logo3.png" class="w-14 h-14" alt="" />
+            <img src="images/logo3.png" class="w-14 h-14 my-4" alt="" />
           </div>
           <div class="mb-8">
-            <h1 class="font-bold text-2xl">Sign in to your account</h1>
-          <p class="text-sm text-gray-400 font-normal">
-            Not a member?
-            <span class="text-purple-shade font-bold text-sm"
-              >Start a 14 day free trial</span
-            >
-          </p>
+            <h1 class="font-bold text-2xl pb-3">Sign in to your account</h1>
+            <p class="text-sm text-gray-400 font-normal">
+              Not a member?
+              <span class="text-purple-shade font-semibold text-xs"
+                >Start a 14 day free trial</span
+              >
+            </p>
           </div>
           <div class="">
             <!--contact form-->
             <form class="">
               <div class="grid grid-cols-1 gap-4">
                 <div class="flex flex-col gap-1">
-                  <label for="" class="font-semibold text-sm text-gray-color"
-                    >Email</label
+                  <label for="" class="font-semibold text-xs text-gray-color"
+                    >Email address</label
                   >
-                  <input type="email" class="border rounded-lg p-1" />
+                  <input type="email" class="border rounded-md p-1" />
                 </div>
                 <div class="flex flex-col gap-1">
-                  <label for="" class="font-semibold text-sm text-gray-color"
-                    >Phone number</label
+                  <label for="" class="font-semibold text-xs text-gray-color"
+                    >Password</label
                   >
-                  <input type="tel" class="border rounded-lg p-1" />
+                  <input type="password" class="border rounded-md p-1" />
                 </div>
                 <div class="flex justify-between gap-10">
-                  <div>
+                  <div class="flex items-center gap-2">
                     <input type="checkbox" />
-                    <label for="">Remember me</label>
+                    <label class="font-normal text-xs text-gray-color">Remember me</label>
                   </div>
                   <div>
-                    <button class="text-purple-shade font-semibold">Forgot password?</button>
+                    <button class="text-purple-shade font-semibold text-xs">
+                      Forgot password?
+                    </button>
                   </div>
                 </div>
                 <!--sign in button-->
-                <div>
+                <div class="mb-6">
                   <button
-                    class="bg-purple-shade w-full rounded-lg p-2 text-center font-bold text-white"
+                    class="bg-purple-shade w-full rounded-lg p-2 text-xs text-center font-semibold text-white"
                   >
                     Sign in
                   </button>
@@ -58,7 +67,28 @@
               </div>
               <!--Or continue with-->
               <div>
-                
+                <fieldset class="border-t h-0">
+                  <legend class="text-center text-black-shade px-4 font-medium text-xs">
+                    Or continue with
+                  </legend>
+                </fieldset>
+              </div>
+              <!--github - google - btns-->
+              <div class="flex justify-between mt-6 gap-4">
+                <div>
+                  <button
+                    class="flex items-center gap-2 border py-2 px-12 rounded-md font-medium text-sm"
+                  >
+                  <i class="fa-brands fa-google text-2xl"></i>Google
+                  </button>
+                </div>
+                <div>
+                  <button
+                    class="flex items-center gap-2 border py-2 px-12 rounded-md font-medium text-sm"
+                  >
+                  <i class="fa-brands fa-github text-2xl"></i>Github
+                  </button>
+                </div>
               </div>
             </form>
           </div>
