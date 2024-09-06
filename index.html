@@ -19,17 +19,26 @@
                             <h1 class="font-bold text-2xl">Sign in to your account</h1>
                             <p class="text-sm text-gray-400 font-normal">Not a member? <span class="text-blue-700 font-bold text-sm">Start a 14 day free trial</span></p>
                         </div>
-                        <div>
-                                <form class="flex flex-col">
-                                    <label for="">Email address</label>
-                                    <input type="text">
-                                    <label for="">Password</label>
-                                    <input type="text">
-                                </form>
+                        <div class="">
+                            <form class="mt-10">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="col-span-2 flex flex-col gap-1">
+                                        <label for="" class="font-semibold text-sm text-gray-color">Email*</label>
+                                        <input type="email" class="border rounded-lg p-1">
+                                    </div>
+                                    <div class="col-span-2 flex flex-col gap-1">
+                                        <label for="" class="font-semibold text-sm text-gray-color">Phone number</label>
+                                        <input type="tel" class="border rounded-lg p-1">
+                                    </div>
+                                </div>
+                                <div class="mt-8">
+                                    <button class="w-full bg-bg-button text-white text-center rounded-full p-3 font-semibold text-sm">Get my free trial</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                    <div class="lg:col-span-6">
-                        <img src="images/login-img.jfif" alt="">
+                    <div class="lg:col-span-6 h-auto bg-green-300">
+                        <img src="images/login-img.jfif" alt="" class="h-full object-cover">
                     </div>
                 </div>
             </div>
