@@ -12,6 +12,7 @@ module.exports = {
         "black-shade":"rgb(17, 24, 39)",
         "light-gray":"#e5e7eb",
         "lightgray-400":"#94a3b8",
+        "body-gray":"#f3f4f6",
       },
     },
   },
