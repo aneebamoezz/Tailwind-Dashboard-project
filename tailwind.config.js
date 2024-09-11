@@ -14,6 +14,7 @@ module.exports = {
         "lightgray-400":"#94a3b8",
         "body-gray":"#f3f4f6",
         "blue-color":"rgb(59, 130, 246)",
+        "black-shade":"rgb(9, 9, 11)",
       },
     },
   },
