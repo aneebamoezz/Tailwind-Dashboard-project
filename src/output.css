@@ -797,8 +797,24 @@ video {
   width: 24rem;
 }
 
+.w-16 {
+  width: 4rem;
+}
+
+.w-10 {
+  width: 2.5rem;
+}
+
+.w-12 {
+  width: 3rem;
+}
+
 .max-w-96 {
   max-width: 24rem;
+}
+
+.max-w-16 {
+  max-width: 4rem;
 }
 
 .table-auto {
