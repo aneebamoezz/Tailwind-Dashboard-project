@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalyst | Tailwind, Dashboard</title>
+    <link rel="stylesheet" href="./src/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"
+    ></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./index.html" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="relative">
+      <div class="flex bg-gray-200 justify-between p-2 lg:hidden">
+        <button class="">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
+            />
+          </svg>
+        </button>
+        <div class="flex items-center gap-1 py-2">
+          <img src="images/erica.jpg" class="rounded-md w-7 h-7" alt="" />
+        </div>
+      </div>
+      <div
+        class="lg:flex lg:flex-col justify-between top-0 left-0 h-screen w-64 sticky hidden"
+      >
+        <div class="lg:flex lg:flex-col gap-2 justify-between">
+          <div class="flex items-center justify-between gap-2 border-b">
+            <div
+              class="flex justify-between w-64 items-center gap-2 sticky px-3 py-2 bg-yellow-200"
+            >
+              <div class="flex gap-2">
+                <img
+                  src="images/logo3.png"
+                  class="rounded-full w-6 h-6"
+                  alt=""
+                />
+                <p class="text-sm font-medium">Catalyst</p>
+              </div>
+              <div class="flex">
+                <div
+                  x-data="{
+                open: false,
+                toggle() {
+                    if (this.open) {
+                        return this.close()
+                    }
+        
+                    this.$refs.button.focus()
+        
+                    this.open = true
+                },
+                close(focusAfter) {
+                    if (! this.open) return
+      
+                    this.open = false
+        
+                    focusAfter && focusAfter.focus()
+                }
+            }"
+                  x-on:keydown.escape.prevent.stop="close($refs.button)"
+                  x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                  x-id="['dropdown-button']"
+                  class="relative"
+                >
+                  <button
+                    x-ref="button"
+                    x-on:click="toggle()"
+                    :aria-expanded="open"
+                    :aria-controls="$id('dropdown-button')"
+                    type="button"
+                    class="flex items-center gap-2 px-5 py-2.5"
+                  >
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                  </button>
+
+                  <div
+                    x-ref="panel"
+                    x-show="open"
+                    x-transition.origin.top.left
+                    x-on:click.outside="close($refs.button)"
+                    :id="$id('dropdown-button')"
+                    style="display: none"
+                    class="absolute -ml-32 mt-2 w-56 rounded-md bg-white shadow-md z-10"
+                  >
+                    <a
+                      href="#"
+                      class="flex items-center border-b text-black-shade font-medium border-gray-300 gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-blue-color hover:text-white"
+                    >
+                      <ion-icon name="settings-outline"></ion-icon>Settings
+                    </a>
+                    <a
+                      href="#"
+                      class="flex border-gray-300 text-black-shade font-medium items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-blue-color hover:text-white"
+                    >
+                      <img
+                        src="images/logo3.png"
+                        class="rounded-full w-4 h-4"
+                        alt=""
+                      />
+                      Catalyst
+                    </a>
+                    <a
+                      href="#"
+                      class="flex border-b border-gray-300 text-black-shade font-medium items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-blue-color hover:text-white disabled:text-gray-500"
+                    >
+                      <img
+                        src="images/BE (1).png"
+                        class="rounded-full w-4 h-4"
+                        alt=""
+                      />
+                      Big Events
+                    </a>
+                    <a
+                      href="#"
+                      class="flex items-center text-black-shade font-medium gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-blue-color hover:text-white"
+                    >
+                      <ion-icon
+                        name="add-outline"
+                        class="font-bold text-md"
+                      ></ion-icon
+                      >New team...
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <ul class="lg:flex lg:flex-col gap-2 px-6 mt-5">
+                <li
+                  class="nav-item flex items-center gap-2 text-sm font-semibold active:text-black"
+                >
+                  <ion-icon name="home"></ion-icon>
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+                <li
+                  class="nav-item flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-black"
+                >
+                  <ion-icon name="copy-sharp"></ion-icon>
+                  <a class="nav-link" href="#">Events</a>
+                </li>
+                <li
+                  class="nav-item flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-black"
+                >
+                  <ion-icon name="funnel-sharp"></ion-icon>
+                  <a class="nav-link" href="#">Orders</a>
+                </li>
+                <li
+                  class="nav-item flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-black"
+                >
+                  <ion-icon name="settings-sharp"></ion-icon>
+                  <a class="nav-link" href="#">Settings</a>
+                </li>
+              </ul>
+            </div>
+            <div class="px-6 py-2 mt-5">
+              <p class="text-xs font-medium text-lightgray-400">
+                Upcoming Events
+              </p>
+            </div>
+            <ul class="lg:flex lg:flex-col mx-4">
+              <li
+                class="nav-item text-sm font-semibold text-black hover:bg-light-gray rounded-md p-2"
+              >
+                <a class="nav-link" href="#">Bear Hug: Live in Concert</a>
+              </li>
+              <li
+                class="nav-item text-sm font-semibold text-black hover:bg-light-gray rounded-md p-2"
+              >
+                <a class="nav-link" href="#">Six Fingers — DJ Set</a>
+              </li>
+              <li
+                class="nav-item text-sm font-semibold text-black hover:bg-light-gray rounded-md p-2"
+              >
+                <a class="nav-link" href="#">We All Look The Same</a>
+              </li>
+              <li
+                class="nav-item text-sm font-semibold text-black hover:bg-light-gray rounded-md p-2"
+              >
+                <a class="nav-link" href="#">Viking People</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="lg:flex lg:flex-col justify-around">
+          <div>
+            <ul class="lg:flex lg:flex-col gap-2 px-6 py-3 mt-5 border-b">
+              <li
+                class="nav-item flex items-center gap-2 text-sm font-semibold active:text-black"
+              >
+                <ion-icon name="help-circle"></ion-icon>
+                <a class="nav-link" href="#">Support</a>
+              </li>
+              <li
+                class="nav-item flex items-center gap-2 text-sm font-semibold active:text-black"
+              >
+                <ion-icon name="sparkles"></ion-icon>
+                <a class="nav-link" href="#">Changelog</a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex justify-between w-64 items-center gap-2 px-3 py-2 sticky bg-yellow-200"
+          >
+            <div class="flex items-center gap-1 py-2">
+              <img src="images/erica.jpg" class="rounded-md w-8 h-8" alt="" />
+              <div class="lg:flex lg:flex-col items-baseline">
+                <p class="text-sm font-medium">Erica</p>
+                <small class="-mt-2">erica@example.com</small>
+              </div>
+            </div>
+            <div class="flex">
+              <div
+                x-data="{
+            open: false,
+            toggle() {
+                if (this.open) {
+                    return this.close()
+                }
+    
+                this.$refs.button.focus()
+    
+                this.open = true
+            },
+            close(focusAfter) {
+                if (! this.open) return
+    
+                this.open = false
+    
+                focusAfter && focusAfter.focus()
+            }
+        }"
+                x-on:keydown.escape.prevent.stop="close($refs.button)"
+                x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                x-id="['dropdown-button']"
+                class="relative"
+              >
+                <button
+                  x-ref="button"
+                  x-on:click="toggle()"
+                  :aria-expanded="open"
+                  :aria-controls="$id('dropdown-button')"
+                  type="button"
+                  class="flex items-center gap-2 px-5 py-2.5"
+                >
+                  <ion-icon name="chevron-up-outline"></ion-icon>
+                </button>
+
+                <div
+                  x-ref="panel"
+                  x-show="open"
+                  x-transition.origin.top.left
+                  x-on:click.outside="close($refs.button)"
+                  :id="$id('dropdown-button')"
+                  style="display: none"
+                  class="absolute -mt-48 -ml-32 w-56 rounded-md bg-white shadow-md z-10"
+                >
+                  <a
+                    href="#"
+                    class="text-gray-700 flex font-medium border-b border-gray-300 items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-xs hover:bg-blue-color hover:text-white"
+                  >
+                    <ion-icon name="person-circle" class="text-lg"></ion-icon>
+                    My account
+                  </a>
+                  <a
+                    href="#"
+                    class="text-gray-700 flex font-medium border-gray-300 items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-xs hover:bg-blue-color hover:text-white"
+                  >
+                    <ion-icon
+                      name="shield-checkmark"
+                      class="text-lg"
+                    ></ion-icon>
+                    Privacy policy
+                  </a>
+
+                  <a
+                    href="#"
+                    class="text-gray-700 flex font-medium border-b items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-xs hover:bg-blue-color hover:text-white"
+                    ><ion-icon name="share" class="text-lg"></ion-icon>Share
+                    feedback
+                  </a>
+                  <a
+                    href="#"
+                    class="text-gray-700 flex font-medium items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-xs hover:bg-blue-color hover:text-white"
+                    ><ion-icon name="log-out" class="text-lg"></ion-icon>Sign
+                    out
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
