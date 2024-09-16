@@ -30,7 +30,7 @@
   <body>
     <div class="bg-body-gray">
       <div class="flex w-full h-12 bg-gray justify-between p-2 lg:hidden">
-        <div x-data="{open: true}">
+        <div x-data="{open: false}">
           <button x-on:click="open = !open">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -48,13 +48,19 @@
             </svg>
           </button>
           <div x-show="open">
-            <div class="flex flex-col justify-between top-0 left-0 bg-white rounded-md fixed h-full z-50">
+          <template x-if="open" class="md:hidden">
+            <div
+                class="fixed w-full h-full bg-black top-0 left-0 opacity-30 z-50">
+                <!-- <img class="fixed object-cover h-full " src="images/login-img-bg.jfif" alt=""> -->
+            </div>
+        </template>
+            <div class="flex flex-col justify-between top-0 left-0 bg-white fixed h-full z-50">
           <div class="flex items-center justify-around gap-2 border-b">
             <div
               class="flex justify-between w-64 items-center gap-2 sticky px-3 py-2"
             >
               <div class="flex flex-col gap-4">
-                <button x-on:click="open = !close">
+                <button x-on:click="open = !open">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                   </svg>                  
