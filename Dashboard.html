@@ -29,8 +29,8 @@
   </head>
   <body>
     <div class="bg-body-gray">
-      <div class="flex w-full h-12 bg-gray justify-between p-2 lg:hidden">
-        <div x-data="{open: false}">
+      <div class="flex w-full h-12 bg-gray justify-between p-3 lg:hidden">
+        <div x-data="{open: true}">
           <button x-on:click="open = !open">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -50,165 +50,165 @@
           <div x-show="open">
           <template x-if="open" class="md:hidden">
             <div
-                class="fixed w-full h-full bg-black top-0 left-0 opacity-30 z-50 ">
+                class="fixed w-full h-full bg-black top-0 left-0 opacity-30 z-50 scroll-none">
                 <!-- <img class="fixed object-cover h-full " src="images/login-img-bg.jfif" alt=""> -->
             </div>
         </template>
-            <div class="flex flex-col justify-between top-0 left-0 bg-white fixed h-full z-50">
-          <div class="flex items-center justify-around gap-2 border-b">
-            <div
-              class="flex justify-between w-64 items-center gap-2 sticky px-3 py-2"
-            >
-              <div class="flex flex-col gap-4">
-                <button x-on:click="open = !open">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                  </svg>                  
-                </button>
-                <div class="flex justify-between w-60 items-center gap-2">
-                  <div class="flex items-center gap-2">
-                    <img
-                  src="images/logo3.png"
-                  class="rounded-full w-6 h-6"
-                  alt=""
-                />
-                <p class="text-sm font-medium">Catalyst</p>
-                  </div>
-                <div class="flex">
-                  <div
-                    x-data="{
-                open: false,
-                toggle() {
-                    if (this.open) {
-                        return this.close()
-                    }
-        
-                    this.$refs.button.focus()
-        
-                    this.open = true
-                },
-                close(focusAfter) {
-                    if (! this.open) return
-      
-                    this.open = false
-        
-                    focusAfter && focusAfter.focus()
-                }
-            }"
-                    x-on:keydown.escape.prevent.stop="close($refs.button)"
-                    x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
-                    x-id="['dropdown-button']"
-                    class="relative"
-                  >
-                    <button
-                      x-ref="button"
-                      x-on:click="toggle()"
-                      :aria-expanded="open"
-                      :aria-controls="$id('dropdown-button')"
-                      type="button"
-                      class="flex items-center gap-2 px-5 py-2.5"
-                    >
-                      <ion-icon name="chevron-down-outline"></ion-icon>
-                    </button>
-  
+        <div class="flex flex-col justify-between top-0 left-0 rounded-md bg-white fixed z-50 m-2 h-5/6">
+            <div class="flex items-center justify-around gap-2 border-b">
+              <div
+                class="flex justify-between w-64 items-center gap-2 sticky px-3 py-2"
+              >
+                <div class="flex flex-col gap-4">
+                  <button x-on:click="open = !open">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>                  
+                  </button>
+                  <div class="flex justify-between w-60 items-center gap-2">
+                    <div class="flex items-center gap-2">
+                      <img
+                    src="images/logo3.png"
+                    class="rounded-full w-6 h-6"
+                    alt=""
+                  />
+                  <p class="text-sm font-medium">Catalyst</p>
+                    </div>
+                  <div class="flex">
                     <div
-                      x-ref="panel"
-                      x-show="open"
-                      x-transition.origin.top.left
-                      x-on:click.outside="close($refs.button)"
-                      :id="$id('dropdown-button')"
-                      style="display: none"
-                      class="absolute -ml-32 mt-2 w-56 rounded-md bg-white shadow-md z-10"
+                      x-data="{
+                  open: false,
+                  toggle() {
+                      if (this.open) {
+                          return this.close()
+                      }
+          
+                      this.$refs.button.focus()
+          
+                      this.open = true
+                  },
+                  close(focusAfter) {
+                      if (! this.open) return
+        
+                      this.open = false
+          
+                      focusAfter && focusAfter.focus()
+                  }
+              }"
+                      x-on:keydown.escape.prevent.stop="close($refs.button)"
+                      x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                      x-id="['dropdown-button']"
+                      class="relative"
                     >
-                      <a
-                        href="#"
-                        class="flex items-center border-b text-black-shade font-medium border-gray-300 gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-blue-color hover:text-white"
+                      <button
+                        x-ref="button"
+                        x-on:click="toggle()"
+                        :aria-expanded="open"
+                        :aria-controls="$id('dropdown-button')"
+                        type="button"
+                        class="flex items-center gap-2 px-5 py-2.5"
                       >
-                        <ion-icon name="settings-outline"></ion-icon>Settings
-                      </a>
-                      <a
-                        href="#"
-                        class="flex border-gray-300 text-black-shade font-medium items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-blue-color hover:text-white"
+                        <ion-icon name="chevron-down-outline"></ion-icon>
+                      </button>
+    
+                      <div
+                        x-ref="panel"
+                        x-show="open"
+                        x-transition.origin.top.left
+                        x-on:click.outside="close($refs.button)"
+                        :id="$id('dropdown-button')"
+                        style="display: none"
+                        class="absolute -ml-32 mt-2 w-56 rounded-md bg-white shadow-md z-10"
                       >
-                        <img
-                          src="images/logo3.png"
-                          class="rounded-full w-4 h-4"
-                          alt=""
-                        />
-                        Catalyst
-                      </a>
-                      <a
-                        href="#"
-                        class="flex border-b border-gray-300 text-black-shade font-medium items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-blue-color hover:text-white disabled:text-gray-500"
-                      >
-                        <img
-                          src="images/BE (1).png"
-                          class="rounded-full w-4 h-4"
-                          alt=""
-                        />
-                        Big Events
-                      </a>
-                      <a
-                        href="#"
-                        class="flex items-center text-black-shade font-medium gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-blue-color hover:text-white"
-                      >
-                        <ion-icon
-                          name="add-outline"
-                          class="font-bold text-md"
-                        ></ion-icon
-                        >New team...
-                      </a>
+                        <a
+                          href="#"
+                          class="flex items-center border-b text-black-shade font-medium border-gray-300 gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-blue-color hover:text-white"
+                        >
+                          <ion-icon name="settings-outline"></ion-icon>Settings
+                        </a>
+                        <a
+                          href="#"
+                          class="flex border-gray-300 text-black-shade font-medium items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-blue-color hover:text-white"
+                        >
+                          <img
+                            src="images/logo3.png"
+                            class="rounded-full w-4 h-4"
+                            alt=""
+                          />
+                          Catalyst
+                        </a>
+                        <a
+                          href="#"
+                          class="flex border-b border-gray-300 text-black-shade font-medium items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-blue-color hover:text-white disabled:text-gray-500"
+                        >
+                          <img
+                            src="images/BE (1).png"
+                            class="rounded-full w-4 h-4"
+                            alt=""
+                          />
+                          Big Events
+                        </a>
+                        <a
+                          href="#"
+                          class="flex items-center text-black-shade font-medium gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-blue-color hover:text-white"
+                        >
+                          <ion-icon
+                            name="add-outline"
+                            class="font-bold text-md"
+                          ></ion-icon
+                          >New team...
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="h-full bg-white flex flex-col justify-between">
+              <ul class="g:flex lg:flex-col gap-2 px-6 mt-5">
+                <li
+                  class="nav-item flex items-center gap-2 pb-3 text-sm font-semibold active:text-black"
+                >
+                  <ion-icon name="home"></ion-icon>
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+                <li
+                  class="nav-item flex items-center gap-2  pb-3 text-sm font-semibold text-gray-700 hover:text-black"
+                >
+                  <ion-icon name="copy-sharp"></ion-icon>
+                  <a class="nav-link" href="#">Events</a>
+                </li>
+                <li
+                  class="nav-item flex items-center gap-2  pb-3 text-sm font-semibold text-gray-700 hover:text-black"
+                >
+                  <ion-icon name="funnel-sharp"></ion-icon>
+                  <a class="nav-link" href="#">Orders</a>
+                </li>
+                <li
+                  class="nav-item flex items-center gap-2  pb-3 text-sm font-semibold text-gray-700 hover:text-black"
+                >
+                  <ion-icon name="settings-sharp"></ion-icon>
+                  <a class="nav-link" href="#">Settings</a>
+                </li>
+              </ul>
+              <ul class="lg:flex lg:flex-col gap-2 px-6 py-3 mt-5">
+                <li
+                  class="nav-item flex items-center gap-2 text-sm font-semibold active:text-black"
+                >
+                  <ion-icon name="help-circle"></ion-icon>
+                  <a class="nav-link" href="#">Support</a>
+                </li>
+                <li
+                  class="nav-item flex items-center gap-2 text-sm font-semibold active:text-black"
+                >
+                  <ion-icon name="sparkles"></ion-icon>
+                  <a class="nav-link" href="#">Changelog</a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="h-full bg-white flex flex-col justify-between">
-            <ul class="g:flex lg:flex-col gap-2 px-6 mt-5">
-              <li
-                class="nav-item flex items-center gap-2 pb-3 text-sm font-semibold active:text-black"
-              >
-                <ion-icon name="home"></ion-icon>
-                <a class="nav-link" href="#">Home</a>
-              </li>
-              <li
-                class="nav-item flex items-center gap-2  pb-3 text-sm font-semibold text-gray-700 hover:text-black"
-              >
-                <ion-icon name="copy-sharp"></ion-icon>
-                <a class="nav-link" href="#">Events</a>
-              </li>
-              <li
-                class="nav-item flex items-center gap-2  pb-3 text-sm font-semibold text-gray-700 hover:text-black"
-              >
-                <ion-icon name="funnel-sharp"></ion-icon>
-                <a class="nav-link" href="#">Orders</a>
-              </li>
-              <li
-                class="nav-item flex items-center gap-2  pb-3 text-sm font-semibold text-gray-700 hover:text-black"
-              >
-                <ion-icon name="settings-sharp"></ion-icon>
-                <a class="nav-link" href="#">Settings</a>
-              </li>
-            </ul>
-            <ul class="lg:flex lg:flex-col gap-2 px-6 py-3 mt-5">
-              <li
-                class="nav-item flex items-center gap-2 text-sm font-semibold active:text-black"
-              >
-                <ion-icon name="help-circle"></ion-icon>
-                <a class="nav-link" href="#">Support</a>
-              </li>
-              <li
-                class="nav-item flex items-center gap-2 text-sm font-semibold active:text-black"
-              >
-                <ion-icon name="sparkles"></ion-icon>
-                <a class="nav-link" href="#">Changelog</a>
-              </li>
-            </ul>
-          </div>
-          </div>
-          </div>
+            </div> 
         </div>
         <div class="flex items-center py-2">
             <img src="images/erica.jpg" class="rounded-md w-7 h-7" alt="" />
