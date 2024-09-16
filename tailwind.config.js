@@ -6,6 +6,9 @@ module.exports = {
       inter:["Inter", "serif"],
     },
     extend: {
+      spacing:{
+        "heightt":"98vh",
+      },
       colors:{
         "purple-shade":"rgb(79, 70, 229)",
         "gray-color":"rgb(55, 65, 81)",
