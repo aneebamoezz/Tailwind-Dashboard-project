@@ -1222,10 +1222,6 @@ video {
   border-radius: 9999px;
 }
 
-.dark\:border:is(.dark *) {
-  border-width: 1px;
-}
-
 .dark\:border-none:is(.dark *) {
   border-style: none;
 }
