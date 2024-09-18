@@ -17,18 +17,23 @@
     />
   </head>
   <body class="font-inter">
-    <div class="grid lg:grid-cols-10 gap-5">
+    <div class="grid lg:grid-cols-10 gap-5 bg-white dark:bg-darkmode-100">
       <div class="lg:col-span-4 flex flex-row justify-center">
         <div class="flex flex-col justify-center">
-          <div>
+          <div class="flex items-center justify-between">
             <img
               src="images/logo3.png"
               class="rounded-full w-14 h-14 my-4"
               alt=""
             />
+            <button id="moon" class="dark:text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+              </svg>
+            </button>
           </div>
           <div class="mb-8">
-            <h1 class="font-bold text-2xl pb-3">Sign in to your account</h1>
+            <h1 class="font-bold text-2xl pb-3 dark:text-white">Sign in to your account</h1>
             <p class="text-sm text-gray-400 font-normal">
               Not a member?
               <span class="text-purple-shade font-semibold text-xs"
@@ -41,13 +46,13 @@
             <form class="">
               <div class="grid grid-cols-1 gap-4">
                 <div class="flex flex-col gap-1">
-                  <label for="" class="font-semibold text-xs text-gray-color"
+                  <label for="" class="font-semibold text-xs text-gray-color dark:text-gray-200"
                     >Email address</label
                   >
                   <input type="email" class="border rounded-md p-1" />
                 </div>
                 <div class="flex flex-col gap-1">
-                  <label for="" class="font-semibold text-xs text-gray-color"
+                  <label for="" class="font-semibold text-xs text-gray-color dark:text-gray-200"
                     >Password</label
                   >
                   <input type="password" class="border rounded-md p-1" />
@@ -55,7 +60,7 @@
                 <div class="flex justify-between gap-10">
                   <div class="flex items-center gap-2">
                     <input type="checkbox" />
-                    <label class="font-normal text-xs text-gray-color"
+                    <label class="font-normal text-xs text-gray-color dark:text-gray-200"
                       >Remember me</label
                     >
                   </div>
@@ -69,10 +74,10 @@
                 <div class="mb-6">
                   <a href="./Dashboard.html">
                     <button
-                    type="button"
+                      type="button"
                       class="bg-purple-shade w-full rounded-lg p-2 text-xs text-center font-semibold text-white"
                     >
-                      Sign in
+                      Sign In
                     </button>
                   </a>
                 </div>
@@ -81,7 +86,7 @@
               <div>
                 <fieldset class="border-t h-0">
                   <legend
-                    class="text-center text-black-shade px-4 font-medium text-xs"
+                    class="text-center text-black-shade px-4 font-medium text-xs dark:text-gray-200"
                   >
                     Or continue with
                   </legend>
@@ -91,14 +96,14 @@
               <div class="flex justify-between mt-6 gap-4">
                 <div>
                   <button
-                    class="flex items-center gap-2 border py-2 px-12 rounded-md font-medium text-sm"
+                    class="flex items-center gap-2 border py-2 px-12 rounded-md font-medium text-sm dark:bg-white"
                   >
                     <i class="fa-brands fa-google text-2xl"></i>Google
                   </button>
                 </div>
                 <div>
                   <button
-                    class="flex items-center gap-2 border py-2 px-12 rounded-md font-medium text-sm"
+                    class="flex items-center gap-2 border py-2 px-12 rounded-md font-medium text-sm dark:bg-white"
                   >
                     <i class="fa-brands fa-github text-2xl"></i>Github
                   </button>
